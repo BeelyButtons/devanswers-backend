@@ -5,7 +5,18 @@ import Answer from "./models/Answer.js";
 import dotenv from "dotenv";
 
 async function query1() {
-  // Write code for Query 1 here
+    try {
+    const user = await User.create({
+      name: "Robin",
+      email: "robin@example.com",
+      password: "hashed_password_7",
+      createdAt: new Date("2025-06-25T10:00:00Z")
+    });
+
+    console.log("User created:", user);
+  } catch (err) {
+    console.error("Error in query1:", err.message);
+  }
 }
 
 async function query2() {
